@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:dpm_exercises_2/models/position.dart';
 import 'package:dpm_exercises_2/models/shape.dart';
 
 class Triangle extends Shape {
@@ -8,12 +9,11 @@ class Triangle extends Shape {
   double side3;
 
   Triangle(
-    int x,
-    int y,
+    Position position,
     this.side1,
     this.side2,
     this.side3,
-  ) : super(x, y);
+  ) : super(position);
 
   @override
   double calculateArea() {
@@ -34,16 +34,16 @@ class Triangle extends Shape {
     return side1 + side2 + side3;
   }
 
-  void printType() {
+  TriangleType getType() {
     if ((side1 == side2) && (side2 == side3)) {
-      print('Equilateral');
-      return;
+      return TriangleType.equilateral;
     }
     if ((side1 == side2) || (side2 == side3)) {
-      print('Isosceles');
-      return;
+      return TriangleType.isosceles;
     }
 
-    print('Scalene');
+    return TriangleType.scalene;
   }
 }
+
+enum TriangleType { equilateral, isosceles, scalene }

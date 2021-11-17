@@ -1,15 +1,15 @@
 import 'dart:math';
 
+import 'package:dpm_exercises_2/models/position.dart';
 import 'package:dpm_exercises_2/models/shape.dart';
 
 class Circle extends Shape {
   double radius;
 
   Circle(
-    int x,
-    int y,
+    Position position,
     this.radius,
-  ) : super(x, y);
+  ) : super(position);
 
   @override
   double calculateArea() {

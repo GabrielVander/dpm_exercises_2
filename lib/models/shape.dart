@@ -1,8 +1,9 @@
-abstract class Shape {
-  int x;
-  int y;
+import 'package:dpm_exercises_2/models/position.dart';
 
-  Shape(this.x, this.y);
+abstract class Shape {
+  Position position;
+
+  Shape(this.position);
 
   double calculateArea();
 }
